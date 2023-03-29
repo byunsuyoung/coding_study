@@ -8,18 +8,18 @@ public class Main {
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
  
 		int max = 0;
-		int min = 0;
+		int index = 0;
 		for(int i = 0 ; i < 9 ; i++) {
  
 			int val = Integer.parseInt(br.readLine());
 			
 			if(val > max) {
 				max = val;
-				min = i+1;
+				index = i+1;
 			}
 		}
  
 		System.out.println(max);
-		System.out.println(min);
+		System.out.println(index);
 	}
 }
