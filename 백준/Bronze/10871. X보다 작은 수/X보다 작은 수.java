@@ -5,18 +5,15 @@ public class Main {
 		Scanner scan = new Scanner(System.in);
 		int N = scan.nextInt();
 		int X = scan.nextInt();
-		int arr[] = new int[N];
-		
-		for(int i =0; i < N; i++) {
-			arr[i] = scan.nextInt();
-		}
-		
-		scan.close();
         
-		for (int i=0; i < N; i++) {
-			if(arr[i] < X) {
-				System.out.print(arr[i] + " ");
+		StringBuilder b = new StringBuilder();
+ 
+		for(int i = 0 ; i < N ; i++) {
+			int value = scan.nextInt();
+			if(value < X) {
+				b.append(value+" ");
 			}
 		}
+		System.out.println(b);	
 	}
 }
