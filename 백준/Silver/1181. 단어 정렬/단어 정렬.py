@@ -5,8 +5,7 @@ li = []
 
 for i in range(n):
     li.append(sys.stdin.readline().strip())
-set_li = set(li)
-li = list(set_li)
+li = list(set(li))
 li.sort()
 li.sort(key = len)
 
