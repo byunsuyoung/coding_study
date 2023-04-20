@@ -1,7 +1,8 @@
 const input = `${require("fs").readFileSync(0,"utf-8")}`.trim().split("\n");
+const N = input.shift()
 
 function solution(input: string[]) {
-    const wordList = Array.from(new Set(input.slice(1)));
+    const wordList = Array.from(new Set(input));
     console.log(
       wordList
         .sort((a, b) => a.length - b.length || a.localeCompare(b))
