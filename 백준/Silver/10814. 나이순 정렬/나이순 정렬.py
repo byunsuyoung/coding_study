@@ -1,12 +1,13 @@
+import sys
+input = sys.stdin.readline
+
 N = int(input())
 
-li = []
-for _ in range(N): 
-    age, name = map(str, input().split())
-    age = int(age)
-    li.append((age, name))
+Person = []
+for _ in range(N): # 리스트 형태로
+    Person.append(list(input().split()))
     
-li.sort(key = lambda parameter_list: parameter_list[0]) # 우선 순위 설정
+Person.sort(key = lambda a: int(a[0])) # 우선 순위 설정
 
-for i in li:
-    print(i[0], i[1])
+for i in range(N):
+    print(Person[i][0], Person[i][1])
