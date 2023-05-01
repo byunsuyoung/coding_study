@@ -1,17 +1,17 @@
 const fs = require("fs");
-const [moles, denoms] = fs.readFileSync("/dev/stdin").toString().trim().split("\n");
+const [numerators, denominators] = fs.readFileSync(0,"utf-8").toString().trim().split("\n");
 
-let [fM, fD] = moles.split(" ").map(BigInt);
-let [sM, sD] = denoms.split(" ").map(BigInt);
+let [a, b] = numerators.split(" ").map(BigInt);
+let [c, d] = denominators.split(" ").map(BigInt);
 
-let mole = fM * sD + sM * fD;
-let denom = fD * sD;
+let numerator = a * d + c * b;
+let denominator = b * d;
 
 const gcd = (x, y) => {
   if (y == 0) return x;
   else return gcd(y, x % y);
 };
 
-const divisor = gcd(mole, denom);
+const divisor = gcd(numerator, denominator);
 
-console.log(`${mole / divisor} ${denom / divisor}`);
+console.log(`${numerator / divisor} ${denominator / divisor}`);
